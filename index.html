@@ -7,50 +7,111 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
             margin: 0;
-            padding: 0;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: #fafafa;
+            color: #333;
         }
 
         header {
-            background-color: #f5e6ff;
+            background: #ff77aa;
+            color: white;
             padding: 20px;
+            text-align: center;
             font-size: 28px;
             font-weight: bold;
-            color: #4a0a73;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px;
+            background: #ffe5ef;
+        }
+
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
         }
 
         h2 {
-            color: #4a0a73;
+            border-bottom: 3px solid #ff77aa;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        p {
-            font-size: 18px;
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .coming {
-            margin-top: 40px;
-            font-style: italic;
-            font-size: 18px;
-            color: #555;
+        .pic {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #ff77aa;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
-
 <body>
 
 <header>
     Priyanka Narwal – Art Portfolio
 </header>
 
-<h2>Welcome to My Art Website</h2>
-<p>This website is created by Priyanka Narwal.</p>
+<nav>
+    <a href="#about">About</a>
+    <a href="#art">My Art</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<h2>My Art</h2>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am <strong>Priyanka Narwal</strong>, an artist who loves drawing, sketching, mandala, and creative artworks.  
+    This is my personal art portfolio where I will share my best artworks and creative projects.</p>
+</section>
 
-<p class="coming">More content coming soon…</p>
+<section id="art">
+    <h2>My Art</h2>
+    <p>Here are some sample slots. You can add your own real artworks later.</p>
+
+    <div class="gallery">
+        <div class="pic">Art 1</div>
+        <div class="pic">Art 2</div>
+        <div class="pic">Art 3</div>
+        <div class="pic">Art 4</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <strong>your-email@gmail.com</strong></p>
+    <p>Instagram: <strong>@your_instagram</strong></p>
+</section>
+
+<footer>
+    © 2025 Priyanka Narwal | All Rights Reserved
+</footer>
 
 </body>
 </html>
