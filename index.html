@@ -1,86 +1,26 @@
- <!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mehndi Designs</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff7f2;
-      margin: 0;
-      padding: 0;
+ document.getElementById('translateBtn').addEventListener('click', async () => {
+    const inputText = document.getElementById('inputText').value;
+    const sourceLang = document.getElementById('sourceLang').value;
+    const targetLang = document.getElementById('targetLang').value;
+    
+    if (!inputText.trim()) {
+        alert('Please enter text to translate.');
+        return;
     }
-    header {
-      background: #c45a27;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
+    
+    try {
+        const { text } = await translate(inputText, { from: sourceLang, to: targetLang });
+        document.getElementById('outputText').value = text;
+    } catch (error) {
+        console.error('Translation error:', error);
+        alert('Translation failed. Please try again.');
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.04);
-    }
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .card p {
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      color: #333;
-      margin: 0;
-      background: #fff2e8;
-    }
-  </style>
-</head>
-<body>
-  <header>Mehndi Design Gallery</header>  <div class="gallery">
-    <div class="card">
-      <img src="https://via.placeholder.com/300x300?text=Mehndi+1" alt="Design 1" />
-      <p>Traditional Bridal Design</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x300?text=Mehndi+2" alt="Design 2" />
-      <p>Arabic Mehndi</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x300?text=Mehndi+3" alt="Design 3" />
-      <p>Simple Mehndi</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x300?text=Mehndi+4" alt="Design 4" />
-      <p>Modern Floral Design</p>
-    </div>
-  </div>
-</body>
-</html><img 
-    src="28573.jpg" 
-    alt="अरेबिक स्टाइल मेहंदी डिज़ाइन, फ्लोरल मोटिफ्स" 
-    width="350" 
-    height="auto"
->
+});
 
-<br><br>
-
-<img 
-    src="28572.jpg" 
-    alt="फुल हैंड बोल्ड मेहंदी डिज़ाइन, पत्तियों और कैरी पैटर्न" 
-    width="350" 
-    height="auto"
->
+document.getElementById('swapBtn').addEventListener('click', () => {
+    const source = document.getElementById('sourceLang');
+    const target = document.getElementById('targetLang');
+    const temp = source.value;
+    source.value = target.value;
+    target.value = temp;
+});
